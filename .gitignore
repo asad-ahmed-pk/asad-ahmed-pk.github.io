@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Secrets / local env
+.env
+.env.*
+
+# Tooling caches
+node_modules/
+__pycache__/
+*.pyc
+tool/.venv/
+
+# Scratch work
+tmp/
+captures/
+
+# Editors
+.idea/
+.vscode/
+*.swp

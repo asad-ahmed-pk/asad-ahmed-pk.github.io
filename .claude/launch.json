@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site",
+      "runtimeExecutable": "tool/dev.sh",
+      "runtimeArgs": [],
+      "port": 8126
+    }
+  ]
+}
