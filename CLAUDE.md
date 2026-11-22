@@ -23,13 +23,14 @@ Personal site of Asad Ahmed: an **online CV** (`/`) and **freelance robotics ser
 - Dev: `tool/dev.sh` (port 8126) or `preview_start` with `site`.
 - Build CSS: `tool/build.sh`. Check: `python3 tool/check.py` (`SKIP_CSS=1` skips the Tailwind freshness check; CI uses it).
 - Hero art: `python3 tool/make_scan.py` regenerates `site/assets/img/scan.svg`.
+- Link-preview images: `python3 tool/make_og.py` renders `og/card.html` (variants `#cv`, `#services`) with headless Chrome into `site/assets/img/og-{cv,services}.jpg` (1200x630). Re-run when the name, role or rate changes; the rate is on the services card.
 - Deploy: push to `main` (`.github/workflows/pages.yml`; Pages source must be "GitHub Actions"). Agents never push unless asked.
 
 ## Identity
 Robot's-eye view: graphite ground, lidar cyan, signal amber, ROS TF axis colours (x red, y green, z blue) as signature (brand mark = coordinate frame). Motifs: point-cloud scan with rotating sweep (`.scan`), topic-style section labels `/experience` (`.eyebrow`), trajectory timeline with waypoints (`.track`/`.role`), corner-bracket panels (`.bbox`), blueprint grid (`.grid-bg`), cut-corner buttons (`.btn`). Deliberately different from Glitch Leopard's lavender/teal.
 
 ## Status
-- 2026-11-22: CV page (`/`), 404, favicon, robots/sitemap, Pages workflow built. Not yet pushed. No og:image yet.
+- 2026-11-22: CV page (`/`), 404, favicon, robots/sitemap, Pages workflow built. 
 - 2026-11-22: deployed and live. Pages workflow is two jobs (build uploads, deploy `needs: build`): a single job raced the artifact listing ("Found 0 artifact(s)").
 - 2026-11-22: `/services` page built (offers, results from the CV, clients, process, contact). Rate: from USD 60 / hour (user, 2026-11-22). Keep private pricing (quote ranges, floors) out of this public repo. check.py (and so CI) fails on any `*-TODO` placeholder.
 - Services decisions (user, 2026-11-22): offers = perception & ROS 2, C++ performance, mapping / SLAM / 3D, tech lead & tooling. Pricing = a public hourly rate ("From X / hour"). Proof = CV achievements only (no client names, no extra projects). Audience = robotics/AV startups, established robotics companies, research labs.

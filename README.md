@@ -46,9 +46,11 @@ site/                 everything GitHub Pages publishes
   assets/css/site.css built by Tailwind, do not edit
   assets/js/site.js   print button, nav highlight
   assets/img/scan.svg generated hero point cloud
+  assets/img/og-*.jpg link-preview images (tool/make_og.py from og/card.html)
   favicon.svg, robots.txt, sitemap.xml
 src/input.css         Tailwind entry: @theme tokens, components, print stylesheet
-tool/                 build.sh · dev.sh · serve.py · check.py · make_scan.py
+og/card.html          link-preview card source (not published)
+tool/                 build.sh · dev.sh · serve.py · check.py · make_scan.py · make_og.py
 .github/workflows/    pages.yml (deploy)
 ```
 

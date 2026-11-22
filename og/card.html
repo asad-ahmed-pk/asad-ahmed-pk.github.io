@@ -1,0 +1,92 @@
+<!doctype html>
+<!--
+  Link-preview (Open Graph) card source, 1200x630. Not published: tool/make_og.py renders it
+  with headless Chrome into site/assets/img/og-*.jpg. Variant is picked by the URL hash
+  (#cv or #services). Colours mirror the @theme tokens in src/input.css.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --ground: #090c0f; --line: #1d272e; --line-hi: #2b3841; --text: #e9eef0; --muted: #97a5ab;
+    --amber: #ffb03b; --cyan: #5fd4e6; --cyan-deep: #1b5a66; --ink: #140e05;
+    --x: #ff6b6b; --y: #5ee08a; --z: #6aa8ff;
+  }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    position: relative; color: var(--text);
+    font-family: -apple-system, "SF Pro Display", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background:
+      radial-gradient(700px 480px at 95% -10%, color-mix(in oklab, var(--cyan-deep) 40%, transparent), transparent 70%),
+      var(--ground);
+  }
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(color-mix(in oklab, var(--cyan) 8%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in oklab, var(--cyan) 8%, transparent) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 70% 80% at 75% 55%, black, transparent 80%);
+  }
+  .scan { position: absolute; right: -230px; bottom: -70px; width: 1000px; opacity: .95;
+    mask-image: radial-gradient(ellipse 55% 60% at 50% 60%, black 30%, transparent 75%); }
+  .frame-box { position: absolute; inset: 28px; border: 1px solid var(--line); }
+  .corner { position: absolute; width: 22px; height: 22px; border-color: var(--cyan); border-style: solid; border-width: 0; }
+  .tl { top: -1px; left: -1px; border-top-width: 2px; border-left-width: 2px; }
+  .tr { top: -1px; right: -1px; border-top-width: 2px; border-right-width: 2px; }
+  .bl { bottom: -1px; left: -1px; border-bottom-width: 2px; border-left-width: 2px; }
+  .br { bottom: -1px; right: -1px; border-bottom-width: 2px; border-right-width: 2px; }
+
+  .content { position: absolute; left: 84px; top: 78px; width: 760px; }
+  .brand { display: flex; align-items: center; gap: 14px; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 22px; letter-spacing: .04em; color: var(--cyan); }
+  .brand svg { width: 44px; height: 44px; }
+  h1 { margin-top: 44px; font-size: 92px; line-height: .98; font-weight: 820; letter-spacing: -.045em; }
+  h1 span { color: var(--amber); }
+  .role { margin-top: 26px; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 26px; color: var(--text); }
+  .role i { font-style: normal; color: var(--amber); margin: 0 12px; }
+  .chips { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 10px; max-width: 700px; }
+  .chip { padding: 8px 14px; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 20px; background: #172027; border: 1px solid var(--line-hi); }
+  .chip.hot { color: #ffd08a; border-color: color-mix(in oklab, var(--amber) 50%, transparent); }
+  .rate { margin-top: 34px; display: inline-flex; align-items: baseline; gap: 12px; padding: 14px 22px; background: color-mix(in oklab, var(--amber) 10%, #11171c); border-left: 3px solid var(--amber); font-size: 34px; font-weight: 700; letter-spacing: -.02em; }
+  .rate b { color: var(--amber); }
+  .rate small { font-size: 20px; color: var(--muted); font-weight: 600; }
+  .url { position: absolute; left: 84px; bottom: 66px; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 22px; color: var(--muted); }
+  .url b { color: var(--text); font-weight: 600; }
+  [data-only] { display: none; }
+  body.cv [data-only~="cv"], body.services [data-only~="services"] { display: revert; }
+  body.services .rate[data-only~="services"] { display: inline-flex; }
+  body.cv .chips[data-only~="cv"] { display: flex; }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <img class="scan" src="../site/assets/img/scan.svg" alt="">
+  <div class="frame-box"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+
+  <div class="content">
+    <p class="brand">
+      <svg viewBox="0 0 32 32" fill="none" stroke-width="2.6" stroke-linecap="round"><path d="M12 20V4" stroke="#6aa8ff"/><path d="M12 20l16 4" stroke="#ff6b6b"/><path d="M12 20l-8 7" stroke="#5ee08a"/><circle cx="12" cy="20" r="2.8" fill="#e9eef0"/></svg>
+      <span data-only="cv">/cv</span><span data-only="services">/services</span>
+    </p>
+
+    <h1 data-only="cv">Asad <span>Ahmed</span></h1>
+    <h1 data-only="services">Freelance robotics <span>&amp; C++</span></h1>
+
+    <p class="role" data-only="cv">Staff Software Engineer<i>/</i>Tech Lead<i>/</i>Robotics</p>
+    <p class="role" data-only="services">Asad Ahmed<i>/</i>staff-level AV engineer</p>
+
+    <div class="chips" data-only="cv">
+      <span class="chip hot">Modern C++</span><span class="chip hot">ROS 2</span><span class="chip">Perception</span>
+      <span class="chip">Mapping / SLAM</span><span class="chip">TensorRT</span><span class="chip">Autonomous vehicles</span>
+    </div>
+    <div class="rate" data-only="services">From <b>USD 60</b><small>/ hour · remote</small></div>
+  </div>
+
+  <p class="url"><b>asad-ahmed-pk.github.io</b><span data-only="services">/services</span></p>
+
+  <script>document.body.className = (location.hash.slice(1) || "cv");</script>
+</body>
+</html>
