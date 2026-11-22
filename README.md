@@ -1,6 +1,6 @@
 # Asad Ahmed: online CV & robotics freelancing
 
-Personal site: <https://asad-ahmed-pk.github.io>. Online CV now; freelance robotics services page next.
+Personal site: <https://asad-ahmed-pk.github.io>. Online CV (`/`) and freelance robotics services (`/services`).
 
 Hosted on **GitHub Pages**: every push to `main` deploys `site/` via GitHub Actions (`.github/workflows/pages.yml`).
 
@@ -41,6 +41,7 @@ python3 tool/check.py      # links, assets, alt text, one h1, header/footer, no 
 ```
 site/                 everything GitHub Pages publishes
   index.html          the CV
+  services.html       freelance services (/services)
   404.html            not-found page (GitHub Pages serves it automatically)
   assets/css/site.css built by Tailwind, do not edit
   assets/js/site.js   print button, nav highlight

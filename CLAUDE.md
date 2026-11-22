@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Personal site of Asad Ahmed: an **online CV** (done) and **freelance robotics services** (next). GitHub Pages user site, repo `asad-ahmed-pk/asad-ahmed-pk.github.io`, public at `https://asad-ahmed-pk.github.io/`. Same stack and rules as `~/Developer/hosting/glitch_leopard_studios_site`, minus Cloudflare.
+Personal site of Asad Ahmed: an **online CV** (`/`) and **freelance robotics services** (`/services`). GitHub Pages user site, repo `asad-ahmed-pk/asad-ahmed-pk.github.io`, public at `https://asad-ahmed-pk.github.io/`. Same stack and rules as `~/Developer/hosting/glitch_leopard_studios_site`, minus Cloudflare.
 
 ## Hard rules
 - **No Node, npm or build framework.** Tailwind v4 standalone CLI + vanilla JS. New tools or libraries: ask first.
@@ -30,4 +30,7 @@ Robot's-eye view: graphite ground, lidar cyan, signal amber, ROS TF axis colours
 
 ## Status
 - 2026-11-22: CV page (`/`), 404, favicon, robots/sitemap, Pages workflow built. Not yet pushed. No og:image yet.
-- Next: `/services` page for freelance robotics work (add to nav, footer, sitemap).
+- 2026-11-22: deployed and live. Pages workflow is two jobs (build uploads, deploy `needs: build`): a single job raced the artifact listing ("Found 0 artifact(s)").
+- 2026-11-22: `/services` page built (offers, results from the CV, clients, process, contact). Rate: from USD 60 / hour (user, 2026-11-22). Keep private pricing (quote ranges, floors) out of this public repo. check.py (and so CI) fails on any `*-TODO` placeholder.
+- Services decisions (user, 2026-11-22): offers = perception & ROS 2, C++ performance, mapping / SLAM / 3D, tech lead & tooling. Pricing = a public hourly rate ("From X / hour"). Proof = CV achievements only (no client names, no extra projects). Audience = robotics/AV startups, established robotics companies, research labs.
+- Nav: Profile, Experience, Skills (CV anchors) + Services; header Contact button is a mailto so it works on every page.

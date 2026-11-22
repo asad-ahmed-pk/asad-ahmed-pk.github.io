@@ -7,6 +7,7 @@
 - shared <header> / <footer> markup is identical on every page that has one
 - site/assets/css/site.css matches a fresh Tailwind build
 - no inline style attributes (styles live in src/input.css)
+- no unfilled placeholders (RATE-TODO and other *-TODO markers)
 Exit code 1 on any failure. Set SKIP_CSS=1 to skip the Tailwind freshness check (CI without Tailwind).
 """
 from __future__ import annotations
@@ -113,6 +114,8 @@ def check_pages() -> None:
         rel = p.relative_to(ROOT)
         if pg.h1 != 1:
             fail(f"{rel}: {pg.h1} <h1> elements (want exactly 1)")
+        for m in sorted(set(re.findall(r"\b[A-Z]+-TODO\b", sources[p]))):
+            fail(f"{rel}: unfilled placeholder {m}")
         if pg.inline_styles:
             fail(f"{rel}: {pg.inline_styles} inline style attribute(s); use classes")
         for img in pg.imgs:
