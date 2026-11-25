@@ -32,6 +32,7 @@ Robot's-eye view: graphite ground, lidar cyan, signal amber, ROS TF axis colours
 ## Status
 - 2026-11-22: CV page (`/`), 404, favicon, robots/sitemap, Pages workflow built. 
 - 2026-11-22: deployed and live. Pages workflow is two jobs (build uploads, deploy `needs: build`): a single job raced the artifact listing ("Found 0 artifact(s)").
-- 2026-11-22: `/services` page built (offers, results from the CV, clients, process, contact). Rate: from USD 60 / hour (user, 2026-11-22). Keep private pricing (quote ranges, floors) out of this public repo. check.py (and so CI) fails on any `*-TODO` placeholder.
-- Services decisions (user, 2026-11-22): offers = perception & ROS 2, C++ performance, mapping / SLAM / 3D, tech lead & tooling. Pricing = a public hourly rate ("From X / hour"). Proof = CV achievements only (no client names, no extra projects). Audience = robotics/AV startups, established robotics companies, research labs.
+- 2026-11-22: `/services` page built (offers, results from the CV, clients, process, contact). Keep private pricing (floors, negotiation notes) out of this public repo. check.py (and so CI) fails on any `*-TODO` placeholder.
+- Services decisions (user, 2026-11-22): offers = perception & ROS 2, C++ performance, mapping / SLAM / 3D, tech lead & tooling. Pricing = a public hourly range plus fixed-scope sprints (updated 2026-11-25). Proof = CV achievements only (no client names, no extra projects). Audience = robotics/AV startups, established robotics companies, research labs.
 - Nav: Profile, Experience, Skills (CV anchors) + Services; header Contact button is a mailto so it works on every page.
+- 2026-11-25: rate changed to USD 85–130 / hour, with fixed-scope sprints as the alternative (user). Added fractional technical lead offer (`/fractional` section, `/engage` with hourly / sprint / fractional), for listing on Fractional Jobs. Fractional proof uses Covolv.ai bullets from the CV only.

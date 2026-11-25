@@ -59,6 +59,8 @@
   body.cv [data-only~="cv"], body.services [data-only~="services"] { display: revert; }
   body.services .rate[data-only~="services"] { display: inline-flex; }
   body.cv .chips[data-only~="cv"] { display: flex; }
+  body.services .content { width: 1000px; }
+  body.services h1 { font-size: 78px; }
 </style>
 </head>
 <body>
@@ -73,16 +75,16 @@
     </p>
 
     <h1 data-only="cv">Asad <span>Ahmed</span></h1>
-    <h1 data-only="services">Freelance robotics <span>&amp; C++</span></h1>
+    <h1 data-only="services">Robotics tech lead, <span>freelance &amp; fractional</span></h1>
 
     <p class="role" data-only="cv">Staff Software Engineer<i>/</i>Tech Lead<i>/</i>Robotics</p>
-    <p class="role" data-only="services">Asad Ahmed<i>/</i>staff-level AV engineer</p>
+    <p class="role" data-only="services">Asad Ahmed<i>/</i>C++<i>/</i>ROS 2<i>/</i>perception</p>
 
     <div class="chips" data-only="cv">
       <span class="chip hot">Modern C++</span><span class="chip hot">ROS 2</span><span class="chip">Perception</span>
       <span class="chip">Mapping / SLAM</span><span class="chip">TensorRT</span><span class="chip">Autonomous vehicles</span>
     </div>
-    <div class="rate" data-only="services">From <b>USD 60</b><small>/ hour · remote</small></div>
+    <div class="rate" data-only="services"><b>USD 85–130</b><small>/ hour · or fixed-scope sprints</small></div>
   </div>
 
   <p class="url"><b>asad-ahmed-pk.github.io</b><span data-only="services">/services</span></p>
